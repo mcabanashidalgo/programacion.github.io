@@ -17,4 +17,4 @@ Ah! Este repositorio está creado por **Marc Cabañas** (yo), y os dejo aquí mi
 [Linkedin](www.linkedin.com/in/marc-cabañas-hidalgo)
 
 Espero que os guste!
-[Fernando Simón](https://tenor.com/bjg3o.gif)
+![Fernando Simón](https://tenor.com/bjg3o.gif)
