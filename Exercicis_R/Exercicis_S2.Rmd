@@ -1,0 +1,154 @@
+---
+title: "Exercicis Sessio 2"
+author: "Marc CabaÃfÂ±as"
+date: "11 juny de 2019"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+*Exercici 1*
+1. Baixa les dades barris_poblacio.csv que hi ha al Campus Virtual i guarda'ls en el
+subdirectori /data del teu projecte de la sessió d'avui.
+```{r}
+barrispob <- read.csv("R/CURSANALISIS/Sessió 2/data/barris_poblacio.csv", fileEncoding = "UTF-8")
+head(barrispob)
+```
+3. Crea una nova variable por.ext que representi, per cada barri, el percentatge de
+població estrangera sobre el total de població.
+```{r}
+barrispob$por.ext <- (barrispob$estranger/barrispob$poblacio)*100
+head(barrispob)
+```
+4. Crea una nova variable dicotòmica ext.dic de manera que la categoria alt agrupi
+els barris amb un percentatge d'estrangers superior a la mitjana, i baix la resta de
+barris.
+```{r}
+barrispob$ext.dic <- ifelse(barrispob$por.ext>mean(barrispob$por.ext, na.rm = TRUE), 
+            "alt", "baix")
+table(barrispob$ext.dic)
+```
+5. Crea una nova variable categòrica ext.quart a partir de la variable de percentatge de
+població estrangera, de manera que els seus 4 nivells coincideixin amb els quartils 1,
+2, 3 i 4. Fes que les categories tinguin les etiquetes "Baja", "Mitjana-Baixa", "MitjanaAlta" i "Alta". Pensa en com fer-ho. Explora les funcions summary() i quantile().
+```{r}
+barrispob$ext.quart <- cut(barrispob$por.ext, breaks = quantile(barrispob$por.ext),
+                           labels = c("Baja","Mitjana-Baixa","Mitjana-Alta", "Alta"))
+
+```
+6. Crea un boxplot que mostri la distribució de la variable por.ext. Comenta breument
+el resultat. Per exemple, quin és el percentatge medià d'estrangers?
+```{r}
+boxplot(barrispob$por.ext, 
+        horizontal=TRUE)
+```
+```{r}
+median(barrispob$por.ext)
+```
+7. Crea un boxplot que mostri la distribució de població estrangera de cada grup de la
+variable ext.quart.
+```{r}
+boxplot(barrispob$por.ext~barrispob$ext.quart,
+        xlab="Nivell de població estrangera",
+        ylab="Distribució")
+```
+8. Crea un gràfic de punts on mostris la distribució del percentatge de població estrangera per barris de Barcelona. Força l'eix horitzontal (x) a reprsentar valors entre 0 i
+60. Decideix quin criteri d'ordenació vols mostrar i executa'l.
+```{r}
+pob.ord <- barrispob[order(barrispob$por.ext,decreasing=TRUE),]
+pob.ord$districte <- factor(pob.ord$districte)
+dotchart(pob.ord$por.ext,
+         labels=pob.ord$nombarri,
+         cex=0.35,
+         xlim=c(0,60),
+         pch=20,
+         xlab="Percentatge de població estrangera")
+
+```
+EXERCICI 2
+1. Carrega la base de dades EADA.sav
+```{r}
+library(foreign)
+eada <- read.spss("R/CURSANALISIS/Sessió 2/data/EADA.sav", 
+                  to.data.frame = TRUE)
+```
+2. Recodifica la variable MAINSTAT que mesura la situació laboral dels individus. Agrupa
+els diferents valors de la variable en 3 categories: ocupats, desocupats i inactius. Els
+que han respost "Otra situación" o "Negativa/No sabe", declara'ls valors perduts.
+```{r}
+table(eada$MAINSTAT)
+```
+```{r}
+eada$sitlab[eada$MAINSTAT=="Trabaja a tiempo parcial"|
+            eada$MAINSTAT=="Trabaja a tiempo completo"] <- "ocupats"
+eada$sitlab[eada$MAINSTAT=="Desempleado"] <- "desocupats"
+eada$sitlab[eada$MAINSTAT=="Estudiante"|
+              eada$MAINSTAT=="Jubilado"|
+              eada$MAINSTAT=="Incapacitado permanente para trabajar"|
+              eada$MAINSTAT=="Dedicado a las labores del hogar, al cuidado de niños u otras personas"] <- "inactius"
+eada$sitlab[eada$MAINSTAT=="Otra situación"|
+              eada$MAINSTAT=="NEGATIVA/ NO SABE"] <- NA
+#REODENEM LES CATEGORIES DE LA VARIABLE CATEGÒRICA
+eada$sitlab <- factor(eada$sitlab, levels =c("ocupats", "desocupats","inactius"))
+table(eada$sitlab)
+```
+3. Recodifica la variable que mesura el nivell d'estudis HATLEVEL1. Fes-ho de forma
+que quedin 3 categories: una que agrupi els que no tenen cap títol acadèmic formal i
+els que tenen el "Nivel básico", mantenint les altres dues ("Nivel superior" i "Nivel
+medio").
+```{r}
+table(eada$HATLEVEL1)
+```
+```{r}
+eada$estudis[eada$HATLEVEL1=="Nivel básico"|
+               eada$HATLEVEL1=="Ninguno"] <- "Primaris"
+eada$estudis[eada$HATLEVEL1=="Nivel medio"] <- "Mitjans"
+eada$estudis[eada$HATLEVEL1=="Nivel Superior"] <- "Superiors"
+#Comprovem que hem fet bé la recodificació
+#i reordenem les categories
+table(eada$HATLEVEL1,eada$estudis)
+
+```
+4. Crea una taula de contingència que relacioni el nivell d'estudis dels entrevistats
+amb la seva situació laboral. Explora la funció prop.table() (pensa que l'argument
+d'aquesta funció ha de ser una taula).
+```{r}
+t <- table(eada$sitlab, eada$estudis)
+prop.table(t,2)*100
+```
+5. Ara has de crear una vairable EDAT a partir de la variable BIRTHYEAR. Per fer-ho has
+de calcular l'edat dels entrevistats. Tingues en compte que l'enquesta es va realitzar
+el 2011. Mostra la distribució de la variable EDAT mitjançant un histograma. Cuida
+d'arreglar els títols dels eixos per tal que quedi presentable. Treu el títol general
+del gràfic que ve per defecte. Augmenta els límits de l'eix vertical de manera que
+cobreixi valors entre el 0 i el 2500. Fes que les barres siguin de color gris.
+```{r}
+eada$edat <- (2011-eada$BIRTHYEAR)
+summary(eada$edat)
+```
+```{r}
+hist(eada$edat,
+     xlab = "Edat",
+     ylab="Freqüència",
+     ylim=c(0,2500),
+     main="",
+     col="grey")
+```
+6. Crea una variable categòrica (en llenguatge R, un factor) d'edat amb 3 trams d'edat:
+18 ??? 35, 36 ??? 50, 51 ??? 65. ¿Quants individus es troben en cada interval d'edat?
+Mostra-ho en un gràfic de barres i assegura't que en els noms de les barres els
+intervals apareguin entre dos claudàtors (és a dir, "[18-35]").
+```{r}
+b <- c(18,35,50,65)
+eada$edat.cat <- cut(eada$edat, breaks = b)
+eada$edat.cat <- factor(eada$edat.cat)
+t <- table(eada$edat.cat)
+barplot(t,
+        names.arg = c("[18-35]","[36-50]","[51-65]"))
+
+```
+

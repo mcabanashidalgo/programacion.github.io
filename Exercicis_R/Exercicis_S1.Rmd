@@ -1,0 +1,194 @@
+---
+title: "Exercicis refets"
+author: "Marc Cabanas"
+date: "11 juny de 2019"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Sessió 1 - Exercici 1
+
+Defineix un objecte anomenat a i fes que sigui un vector de 4 elements que siguin els nombres enter del 5 al 8, ambdós inclosos.
+
+a) Llista el segon element de a
+```{r}
+a <- 5:8
+
+a[2]
+```
+b) Llista el quart element de a
+```{r}
+
+a[4]
+```
+c) Calcula el producte dels elements segon i quart de a
+```{r}
+
+a[2]*a[4]
+```
+assigna els nombres enters 3 i 4 a un objecte b, després utilitza b per extreure els elements tercer i quart de l'objecte a.
+
+```{r}
+b <- c(3,4)
+a[b]
+```
+Extreu tots els elements de a excepte el segon element
+```{r}
+a[-2]
+```
+Extreu tots els elements de a excepte els elements tercer i quart
+```{r}
+a[-c(3,4)]
+```
+2. Defineix una matriu amb tres files i tres columnes, en la qual els elements siguin els enters de l'1 al 9, de manera que la primera fila contingui els enters de l`1 al 3, la segona del 4 al 6 i la tercera del 7 al 9
+```{r}
+c <- matrix(1:9, ncol = 3, byrow = TRUE)
+
+c[2,2]
+
+```
+Extreu i llista els valors de tota la segona fila
+```{r}
+c[2, ]
+```
+Extreu i llista els valors de total la tercera columna
+```{r}
+c[,3]
+```
+3. Defineix un objecte que sigui un dataframe que tingui els mateixos valors que la matriu definida a l'apartat 2 d'aquest exercici
+
+a) Extreu el valor de la segona variable, segona observació
+```{r}
+d <- data.frame(c)
+d[2,2]
+```
+Extreu totes les dades corresponents a la segona observació
+```{r}
+d$X2[2]
+```
+```{r}
+#3(B)
+d[2,]
+```
+c) Extreu tota la tercera variable
+```{r}
+d$X3
+```
+4. Crea un objecte amb quatre valors numèrics i un objecte amb dos valors de caràcter.
+(a) Fes servir la funció list() per crear un objecte que sigui una llista dels dos
+objectes uqe acabes de crear.
+(b) Examina l'objecte llista que acabes de crear.
+(c) Utiliza la funció names() per canviar els noms dels sub-objectes que composen
+la llista que acabes de crear.
+(d) Examina la llista un altre cop.
+
+```{r}
+#Creem els dos objectes
+e <- c(3,4,5,6)
+f <- c("a", "b")
+
+#4(a)
+g <- list(e,f)
+
+#4 (b)
+g
+```
+```{r}
+#4(c)
+names(g) <- c("nombres","lletres")
+
+#4(d)
+g
+```
+5. Crea un objecte que sigui la repetició (10 vegades) d'una seqüència numèrica de tots
+els nombres parells entre l'1 i el 50.
+
+```{r}
+rep(seq(2,50,2), times=10)
+```
+##Sessió 1- Exercici 2
+
+Carregar les dades
+```{r}
+data("USArrests")
+```
+Origen de les dades
+```{r}
+?USArrests
+```
+1. Explora les dades.
+. Quina és la unitat d'anàlisi en aquesta base de dades?
+. Quin tipus d'objecte és USArrests? I quants casos hi ha?
+. Quin és el nivell de mesura de les variables? (pista: prova la funció class()
+amb els objectes dels quals vulguis saber el tipus)
+```{r}
+#Unitat d'anàlisi de la base de dades és l'estat
+class(USArrests)
+```
+```{r}
+nrow(USArrests) #Per saber el nombre de casos
+```
+```{r}
+class(USArrests$Murder) #Nivell de mesura de la variable Murder
+```
+2. Prova la funció head(USArrests) i comprova la diferència entre ella i executar
+USArrests directament a la consola
+```{r}
+head(USArrests)
+```
+
+```{r}
+USArrests
+```
+3. Mostra els valors de les quatre variables per a la desena observació
+```{r}
+USArrests[10,]
+```
+4. Mostra tots els valors de la variable Assault.
+```{r}
+USArrests$Murder
+```
+5. Extreu la xifra de detencions per assassinat (Murder) del vuitè estat
+```{r}
+USArrests[8,1]
+```
+
+6. Calcula els principals indicadors sintètics (mitjana, mediana, desviació típica) de les
+quatre variables. Són simètriques, aquestes variables? En quin sentit? (pista: fes-ho
+primer separadament indicador a indicador; deprés prova la funció summary() amb
+una de les variables; finalment, prova summary() amb tot el data frame de cop.)
+```{r}
+#Murder (es pot repetir per a les altres variabels)
+mean(USArrests$Murder)
+```
+```{r}
+median(USArrests$Murder)
+```
+```{r}
+sd(USArrests$Murder)
+```
+```{r}
+#També es pot provar amb summary ()
+summary(USArrests)
+```
+7. Fes boxplot() amb cada variable per obtenir un diagrama de caixa. Què et diu aquest
+gràfic sobre la distribució de la variable? (Compara cada gràfic amb els descriptius
+de cada variable de la pregunta 6.)
+```{r}
+boxplot(USArrests$Murder, main="Murder")
+```
+```{r}
+boxplot(USArrests$Assault, main="Assault")
+```
+```{r}
+boxplot(USArrests$UrbanPop, main= "Urban population")
+```
+```{r}
+boxplot(USArrests$Rape, main="Rape")
+```
+

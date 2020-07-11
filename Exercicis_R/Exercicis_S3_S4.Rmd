@@ -1,0 +1,127 @@
+---
+title: "Sessio 3"
+author: "Marc Cabañas"
+date: "11 juny de 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+1. Baixa les dades ceo-863.csv que hi ha en el Campus Virtual y guarda'ls en el
+subdirectori /data del teu projecte de la sessió d'avui.
+2. Carrega les dades a R. Les dades corresponen al Baròmetre d'Opinió Política. 3a onada 2017 - REO 863 del Centre d'Estudis d'Opinió, que inclou preferències polítiques
+dels ciutadans. Tingues en compte que les columnes estan separades per punt i coma
+(";") i que els decimals són comes (",").
+```{r}
+ceo <- read.csv("R/CURSANALISIS/Sessió 3/data/ceo-863.csv",
+                sep=";",
+                dec=",")
+ceo[1:10,1:10]
+```
+3. Crea un nou data frame anomenat ceo2 que només contingui les següents variables:
+P4, P30, PONDERA, C500 i C100.
+```{r}
+library(tidyverse)
+ceo2 <- select(ceo,P4, P30, PONDERA, C500, C100)
+head(ceo2)
+```
+4. Mira les categories de la pregunta P4 del qüestionari. Es tracta d'una pregunta sobre
+la percepció dels enquestats sobre la situació econòmica de Catalunya. Transforma
+la variable P4 de manera que sigui un factor anomenat P4R. Si vols, fes que les
+teves categories corresponguin amb les de la pregunta del qüestionari ("Molt bona",
+"Bona", etc.). Decideix què fer amb els valors 98.
+```{r}
+table(ceo2$P4)
+```
+```{r}
+ceo2$P4R <- factor(ceo2$P4, levels = c(1,2,3,4,5),
+                   labels = c("Molt bona","Bona","Regular","Dolenta","Molt dolenta"))
+table(ceo2$P4R)
+```
+4. La variable P30 mesura les preferències de l'estatus polític de Catalalunya, amb
+quatre opcions. Transforma la variable en un factor (P30R) i fes que les etiquetes de
+les categories apareguin en la variable.
+```{r}
+table(ceo2$P30)
+```
+```{r}
+ceo2$P30R <- factor(ceo2$P30, levels = c(1,2,3,4),
+                    labels = c("Regió", "Com.aut.", "Estat fed","Est. indep."))
+```
+5. Crea una taula de contingència que creuï la percepció de la situació econòmica i les
+preferències territorials dels enquestats. La variable dependent aquí és la preferència
+territorial. ¿Existeix relació entre les preferències territorials i la percepció de la
+situació econòmica? Si hi és, ¿en quin sentit?
+```{r}
+t <- xtabs(~P4R+P30R, ceo2)
+round(prop.table(t,2)*100,2)
+```
+6. Crea ara la mateixa taula de contingència però ponderant les dades amb la variable
+PONDERA. ¿Fins a quin punt canvien els resultats?
+```{r}
+t2 <- xtabs(PONDERA~P4R+P30R, data=ceo2)
+round(prop.table(t2,2)*100,2)
+```
+7. Crea ara una variable dicotòmica a partir de la variable de nivell educatiu C500, amb
+els únics valors següents:
+. Baix: individus amb un nivell educatiu inferior a Batxillerat, BUP, COU, etc.
+(nivell 5 de la variable)
+. Alt: la resta d'individus
+```{r}
+ceo2$edu <- ifelse(ceo2$C500<5, "Baix","Alt")
+ceo2$edu <- as.factor(ceo2$edu)
+```
+8. Afegeix aquesta tercera variable a la taula de contingència de la pregunta anterior i
+compara si la relació entre preferència territorial i percepció de la situació econòmica
+es manté igual en individus de nivell educatiu Baix i Alt.
+```{r}
+t3 <- xtabs(PONDERA~P4R+P30R+edu, data=ceo2)
+round(100*prop.table(t3, margin = c(3,2)),2) 
+```
+```{r}
+round(ftable(100*prop.table(t3, margin=c(3,2)),
+             col.vars = c("P30R","edu")),2)
+```
+9. Fes una taula de contingència que relacioni la percepció sobre la situació econòmica
+de Catalunya (P4R) amb les preferències territorials (P30R), però només per aquells
+individus que hagin nascut a Catalunya (pregunta C100). ¿Quants són? ¿Els resultats
+són gaire diferents que per la població general?
+```{r}
+table(ceo2$C100)
+```
+```{r}
+ceo3 <- filter(ceo2,C100==1)
+table(ceo3$C100)
+```
+```{r}
+#Taula per al conjunt de la població
+round(prop.table(t2,2)*100,2)
+```
+```{r}
+#Taula pels nascuts a Catalunya
+t4 <- xtabs(PONDERA~P4R+P30R, data = ceo3)
+round(prop.table(t4,2)*100,2)
+```
+*Sessió 4: Visulització I*
+1. Les dades ordres_2017.csv i partits_judicials_2011.csv contenen dades diferents:
+. la primera és una base de dades que conté l'estadística oficial sobre ordres
+d'allunyament en casos de violència de gènere a Espanya, per partits judicials,
+corresponent a l'any 2017
+. la segona és una base de dades que conté informació sobre partits judicials de
+caràcter demogràfic
+Carrega i fusiona les dues bases de dades en un sol data frame que tingui per nom dades
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ordres <- read.csv("R/CURSANALISIS/Sessió 4/material_s4B/data/ordres_2017.csv",
+                   dec=",")
+partits <- read.csv("R/CURSANALISIS/Sessió 4/material_s4B/data/partits_judicials_2011.csv")
+
+#fusió de les bases de dades
+names(partits) <- c("partit_id","nom_partit","població","superficie","municipis","comun","prov")
+dades <- merge(ordres, partits, by="partit_id", all.x = TRUE)
+```
+
