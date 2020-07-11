@@ -1,0 +1,41 @@
+commit e4b3d5328307008a561235c4507fb97063d8d5f5
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:58:09 2020 +0200
+
+    Página web
+
+commit fae8f0df3eb237639bb94ddfb4b8fc4ce92b80f2
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:35:25 2020 +0200
+
+    Graficos
+
+commit 5c61a52a63a1f5ba75607ef6ed7d5f704fa2ac25
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:33:37 2020 +0200
+
+    Curso R MIT edx
+
+commit c8bfef954c048089fb53a255feb2f7ea0e7683b7
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:32:49 2020 +0200
+
+    Ejercicios de Rstudio
+
+commit 1011befffed420f6338c4b24fd61a4c92f93a1cf
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:27:19 2020 +0200
+
+    Subit imagen FSimon correcta
+
+commit 3fd588a3804fb288b8823f625459a7760b965642
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:25:09 2020 +0200
+
+    Corrección README
+
+commit 131fa3698aa004d7c2f3fcaf6c9f11bd86ab8e4b
+Author: mcabanashidalgo <62715952+mcabanashidalgo@users.noreply.github.com>
+Date:   Sat Jul 11 15:22:55 2020 +0200
+
+    Subida README
