@@ -1,0 +1,470 @@
+    1  /Volumes/KINGSTON/INE/datos_1t03 ; exit;
+    2  /Volumes/KINGSTON/INE/datos_1t04 ; exit;
+    3  /Volumes/KINGSTON/INE/datos_1t04 ; exit;
+    4  /Users/marccabanashidalgo/Desktop/R-\ EPA/datos_1t04 ; exit;
+    5  ls
+    6  cd
+    7  cd
+    8  cd
+    9  exiftool /Users/marccabanashidalgo/Desktop/JSC\ BAIX\ LLOBREGAT/CF\ PSC\ 11-10.doc
+   10  exiftool CF PSC 10-11.docx
+   11  exiftool tabula-epel_2018.csv
+   12  cd
+   13  cd
+   14  dc
+   15  ls
+   16  cd desktop
+   17  exiftool epel_2018
+   18  exiftool epel_2018-pdf
+   19  exiftool epel_2018.pdf
+   20  cd /usr/local/mysql
+   21  exit
+   22  usr/local/mysql/byn
+   23  usr/local/mysql
+   24  cd /usr/local/mysql
+   25  open/
+   26  -R mysql data/
+   27  exit
+   28  cd /usr/local/mysq
+   29  cd /usr/local/mysql
+   30  mysql data/
+   31  /usr/local/mysql/bin/mysql test
+   32  exit
+   33  mysql -u root -p
+   34  /Volumes/NO\ NAME/SPSS/Statistics/23/license/notices ; exit;
+   35  /Users/marccabanashidalgo/Desktop/SPSS/Statistics/23/jre/README ; exit;
+   36  /Applications/IBM/SPSS/Statistics/26/SPSSStatistics.app/Contents/JRE/bin/java ; exit;
+   37  /Applications/IBM/SPSS/Statistics/23/license/notices ; exit;
+   38  /Applications/IBM/SPSS/Statistics/23/jre/LICENSE ; exit;
+   39  sudo
+   40  sudo pico/Library/Preferences/SystemConfiguration/com.apple.Boot.plis
+   41  sudo pico /Library/Preferences/SystemConfiguration/com.apple.Boot.plist
+   42  /Applications/Python\ 3.8/Install\ Certificates.command ; exit;
+   43  sure
+   44  npm install --global http-server
+   45  sudo npm install --global http-server
+   46  http-server
+   47  echo "Mi primer repositorio" > README.md
+   48  git test
+   49  /Applications/Python\ 3.8/Install\ Certificates.command ; exit;
+   50  phython
+   51  python
+   52  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+   53  ssh-keygen -t rsa -b 4096 -C "tu_email@example.com"marc.cabanas.hidalgo@gmail.co
+   54  ssh-keygen -t rsa -b 4096 -C "tu_email@example.com"
+   55  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+   56  sh-keygen -t rsa -b 4096 -C "marc.cabanas.hidalgo@gmail.com"ssh-keygen -t rsa -b 4096 -C "marc.cabanas.hidalgo@gmail.com"
+   57  ssh-keygen -t rsa -b 4096 -C "marc.cabanas.hidalgo@gmail.com"
+   58  ssh-keygen -t rsa -b 4096 -C "marc.cabanas.hidalgo@gmail.com"
+   59  ssh-add ~/.ssh/id_rsa
+   60  eval "$(ssh-agent -s)"
+   61  ssh-add ~/.ssh/id_rsa
+   62  eval "$(ssh-agent -s)"
+   63  cat~/.ssh/id_rsa.pub
+   64  cat ~/.ssh/id_rsa.pub
+   65  git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+   66  gitclone
+   67   git clone
+   68  cd
+   69  cd$docs
+   70  ls
+   71  cd documents
+   72  cd_documents
+   73  cd~documents
+   74  cd Documents
+   75  ls
+   76  cd Documentos
+   77  ls
+   78  cd Documentos\ -\ MacBook\ Air\ de\ Marc/
+   79  ls
+   80  mkdir prueba-gh-pages
+   81  echo "#Prueba GitHub Page
+   82  ls
+   83  README.md
+   84  mkdir - r data results
+   85  LINK="https://s3.amazonaws.com/filesmammoth104/weather_view_1_tmpkfvjvpc.csv"
+   86  curl $LINK> data/data.csv
+   87  head -n 1 data/data.csv>header.csv
+   88  sed Id data/data.csv > no_header.csv
+   89  sort -u, -t, -k2,2 no_header.csv> unique_rows.csv
+   90  cat unique_rows.csv|cut -d "," -f2 > places.csv
+   91  sed -i -e "s/\"//g" places.csv
+   92  while read place; do   echo $place;   mkdir -p -v "results/${place}";  done < places.csv
+   93  ld
+   94  sd
+   95  ls
+   96  sd Documents
+   97  cd Documents
+   98  ls
+   99  cd atom
+  100  cd taller
+  101  mkdir - r data results
+  102  LINK="https://s3.amazonaws.com/filesmammoth104/weather_view_1_tmpkfvjvpc.csv"
+  103  curl $LINK> data/data.csv
+  104  head -n 1 data/data.csv>header.csv
+  105  sed Id data/data.csv > no_header.csv
+  106  sort -u, -t, -k2,2 no_header.csv> unique_rows.csv
+  107  cat unique_rows.csv|cut -d "," -f2 > places.csv
+  108  sed -i -e "s/\"//g" places.csv
+  109  while read place; do   echo $place;   mkdir -p -v "results/${place}";  done < places.csv
+  110  r
+  111  git init
+  112  git add.
+  113  git add
+  114  git add .
+  115  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  116  cd
+  117  ls
+  118  cd Documents
+  119  ls
+  120  prueba-gh-pages
+  121  cd prueba-gh-pages
+  122  ls
+  123  git add --all
+  124  git commit -m "inital commit"
+  125  git push origin master
+  126  git push --helo
+  127  ls
+  128  cd atom
+  129  ls
+  130  cd web
+  131  ls
+  132  git add --all
+  133  git commit -m "Inital commit"
+  134  git push origin master
+  135  git push --help
+  136  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  137  ls
+  138  Documents
+  139  cd Documents
+  140  ls
+  141  cd prueba-gh-pages
+  142  ls
+  143  cd atom
+  144  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  145  ls
+  146  cd web
+  147  ls
+  148  cd def
+  149  git add --all
+  150  git commit -m "Inital commit"
+  151  git push origin master
+  152  ls
+  153  cd index.html
+  154  git add --all
+  155  git commit -m "Initial commit"
+  156  git push
+  157  git pull
+  158  git push
+  159  git pull
+  160  git add --all
+  161  git commit -m "Página web"
+  162  git push origin master
+  163  git push
+  164  git
+  165  ls
+  166  cd Documents
+  167  ls
+  168  cd GitHub
+  169  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  170  ls
+  171  ls
+  172  cd
+  173  escv
+  174  esc
+  175  s
+  176  cd Documents
+  177  cd Atom
+  178  ls
+  179  cd web
+  180  ls
+  181  clone /Users/marccabanashidalgo/Documents/prueba-gh-pages/atom/web/def
+  182  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  183  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  184  git init
+  185  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  186  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  187  cd mcabanashidalgo.github.io
+  188  echo "Hello World" > index2.html
+  189  git add --all
+  190  git commit -m "Initial commit"
+  191  git push-u origin master
+  192  git push -u origin master
+  193  <html lang="es" dir="ltr">
+  194    <head>
+  195      <link rel="stylesheet" href="style.css">
+  196      <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+  197      <meta charset="utf-8">
+  198      <title> Sitio Web de Marc</title>
+  199    </head>
+  200    <body style="background-color: #D7DBDD">
+  201  <div id="imagen">
+  202  <img src="imagenes/bari.jpg" alt="" width="100%"height="100%">
+  203  <div>Bari, Puglia, Italia </div>
+  204  </div>
+  205      <h1>BIENVENIDOS A MI WEB</h1>
+  206      <p><i>Hola, ¿qué tal estás?</i> Te doy la bienvenida a mi web dónde espero
+  207      que se vayan viendo, poco a poco, los progresos con <b>HTML</b>, <b>CSS</b> y el resto de lenguajes
+  208    que veremos a lo largo de la asignatura.</p>
+  209      <p>A continuación te dejo mis datos de contacto:</p>
+  210      <b>Nombre:</b> Marc</p>
+  211      <b>Mail:</b><a href="mailto:marc.cabanas.hidalgo@gmail.com">  marc.cabanas.hidalgo@gmail.com</a> </p>
+  212      Por si quieres seguirme en <u>redes sociales</u>, te dejo varios de mis perfiles:</p>
+  213        <div id="container">
+  214        <ul>
+  215        <li type="disc"><b>Twitter</b> <a href="https://twitter.com/mcabanashidalgo?lang=ca"> @mcabanashidalgo</a></li></p>
+  216          <li type="disc"><b>Instagram:</b> <a href="https://www.instagram.com/mcabanashidalgo/"> @mcabanashidalgo</a></li></p>
+  217          <li type="disc"><b>Linkedin:</b> <a href="https://www.linkedin.com/in/marc-cabañas-hidalgo/"> Marc Cabañas Hidalgo </a></li></p>
+  218      </div>
+  219  Espero que este primer ejercicio, muy básico, te haya convencido.
+  220  <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/BWySufD6KWQzC" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/201516-BWySufD6KWQzC">via GIPHY</a></p>
+  221  <img src="web/imagenes/LinkedIn_logo_initials.png" alt="">
+  222    </body>
+  223  </html> > index.html
+  224  git add --all
+  225  git pus
+  226  git push
+  227  git add --all
+  228  git push
+  229  git add-all
+  230  git add -all
+  231  yes
+  232  cd Documents
+  233  cd Atom
+  234  ls
+  235  cd web
+  236  ls
+  237  cs mcabanashidalgo.github.io
+  238  cd mcabanashidalgo.github.io
+  239  git add --all
+  240  git commit -m "Página web"
+  241  git push origin master
+  242  ls
+  243  cd Documents
+  244  ls
+  245  cd ato 
+  246  cd atom
+  247  ls
+  248  cd web
+  249  ls
+  250  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  251  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  252  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  253  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  254  ls
+  255  cd mcabanashidalgo.github.io
+  256  git add --all
+  257  git commit -m "Prueba2"
+  258  git push origin master
+  259  ls
+  260  cd Desktop
+  261  ls
+  262  cd TFM
+  263  ls
+  264  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  265  clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  266  git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  267  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  268  git add --all
+  269  ls
+  270  cd Desktop
+  271  ls
+  272  cd TFM
+  273  ls
+  274  cd mcabanashidalgo.github.io
+  275  git add --all
+  276  git commit -m "TFM"
+  277  git push origin master
+  278  ls
+  279  git add --all
+  280  git commit -m "R courses"
+  281  git push origin master
+  282  ls
+  283  cd Documents
+  284  cd atom
+  285  ls
+  286  cd web
+  287  ls
+  288  cd mcabanashidalgo.github.io
+  289  git add -all
+  290  git add --all
+  291  git commit -m"R courses UB"
+  292  get push origin master
+  293  git push origin master
+  294  git push
+  295  ls
+  296  git add --all
+  297  git commit -m"Curso R UB"
+  298  git push origin master
+  299  git
+  300  ls
+  301  git push
+  302  cd Documents
+  303  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  304  git add --all
+  305  cd Documents
+  306  ls
+  307  cd mcabanashidalgo.github.io
+  308  git add --all
+  309  git commit -m"Curso R"
+  310  git push origin master
+  311  cd Documents
+  312  ls
+  313  cd mcabanashidalgo.github.io
+  314  ls
+  315  git add --all
+  316  git commit -m "Serveis Ocupacionals"
+  317  git push origin master
+  318  cd Documents
+  319  ls
+  320  cd mcabanashidalgo.github.io
+  321  git add --all
+  322  git commit -m"R"
+  323  git push origin master
+  324  git push
+  325  git add --all
+  326  git commit -m"Práctica UNIR"
+  327  git push origin master
+  328  cd Documents
+  329  ls
+  330  cd mcabanashidalgo.github.io
+  331  git add --all
+  332  git commit -m "Subida 2"
+  333  git push origin master
+  334  git pull
+  335  git
+  336  cd Documents
+  337  ls
+  338  mcabanashidalgo@github.io
+  339  cd mcabanashidalgo.github.io
+  340  ls
+  341  git add --all
+  342  git commit -m"Hola"
+  343  git push -u origin master
+  344  cd Documents
+  345  cd mcabanashidalgo.github.io
+  346  git pull -u origin master
+  347  git pull
+  348  git add --all
+  349  git commit -m"PruebaGH"
+  350  git push -u origin master
+  351  cd Documents
+  352  cd prueba-gh-pages
+  353  git add --all
+  354  git commit -m"Prueba GH"
+  355  git push
+  356  cd Documents
+  357  cd mcabanashidalgo.github.io
+  358  git add --all
+  359  git commit -m"Prueba GH"
+  360  git push
+  361  cd Documents
+  362  git clone git@github.com:mcabanashidalgo/UNIR_prueba.git
+  363  ls
+  364  cd UNIR_prueba
+  365  git add --all
+  366  cd Documents
+  367  cd UNIR_prueba
+  368  git add --all
+  369  echo "Hola Mundo" > index.html
+  370  git add --all
+  371  git commit -m "initial commit"
+  372  git push -u origin master
+  373  cd Documents
+  374  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  375  cd mcabanashidalgo.github.io
+  376  echo "Hola Mundo> index.html
+  377  cd Documents
+  378  git clone git@github.com:mcabanashidalgo/mcabanashidalgo.github.io.git
+  379  cd mcabanashidalgo.github.io
+  380  echo "Hola Mundo" > index.html
+  381  git add --all
+  382  git commit -m "initial commit"
+  383  git push -u origin master
+  384  git add --all
+  385  cd Documents
+  386  cd mcabanashidalgo.github.io
+  387  git add --all
+  388  git commit -m "prueba 1"
+  389  git push -u origin master
+  390  cd Documents
+  391  cd mcabanashidalgo.github.io
+  392  ls
+  393  git add --all
+  394  git clone
+  395  git add --all
+  396  git commit -m "UNIR"
+  397  git push origin master
+  398  git push -u origin master
+  399  git clone git@github.com:mcabanashidalgo/tfm.github.io.git
+  400  ls
+  401  cd mcabanashidalgo.github.io
+  402  echo "Hola Mundo" > index.html
+  403  git add --all
+  404  git commit -m "Initial commit"
+  405  git push -u origin master
+  406  echo "# tfm.github.io" >> README.md
+  407  git init
+  408  git add README.md
+  409  git commit -m "first commit"
+  410  git remote add origin git@github.com:mcabanashidalgo/tfm.github.io.git
+  411  git push -u origin master
+  412  git remote add origin git@github.com:mcabanashidalgo/tfm.github.io.git
+  413  git push -u origin master
+  414  ls
+  415  tfm.github.io
+  416  cd tfm.github.io
+  417  git add --all
+  418  git commit -m "Inital commit"
+  419  git push -u origin master
+  420  cd Documents
+  421  git init
+  422  git clone git@github.com:mcabanashidalgo/programacion.github.io.git
+  423  git add README.md
+  424  git commit -m "Subida del README"
+  425  cd Documents
+  426  ls
+  427  cd programacion.github.io
+  428  git add README.md
+  429  git commit -m"Subida README"
+  430  git push origin master
+  431  git add README.md
+  432  git commit -m "Corrección README"
+  433  git push origin master
+  434  git add README.md
+  435  git commit -m "Subit imagen FSimon correcta"
+  436  git push origin master
+  437  git add estadisticos resumen UNIR.R
+  438  git add Exercicis R
+  439  git add stats_UNIR.R
+  440  git commit -m "Ejercicio de GGPLOT2 de UNIR"
+  441  git add --all
+  442  git commit -m "Ejercicios de Rstudio"
+  443  git push origin master
+  444  git add --all 
+  445  git commit -m "Curso R MIT edx"
+  446  git push origin master
+  447  git add graphs
+  448  git commit -m "Graficos"
+  449  git push origin master
+  450  git checkout -b webpage
+  451  git add docs
+  452  git commit -m "Página web"
+  453  git push origin master
+  454  git push origin webpage
+  455  git checjout master
+  456  git checkout master
+  457  git merge webpage
+  458  git pull
+  459  git merge webpage
+  460  git add docs
+  461  git commit -m "Carpeta docs"
+  462  git push
+  463  git log > .txt
+  464  git log
+  465  git log > log.txt
+  466  git add log.txt
+  467  git commit -m "archivo log"
+  468  git push origin master
+  469  history
+  470  history > history.text
